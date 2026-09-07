@@ -1,4 +1,6 @@
-# Migration Workbench 0.2.0
+# Legacy Upgrade Companion for You L-U-C-Y
+
+**Understand the past. Build the next. Verify the match.**
 
 An evidence-led C#/.NET to Java/React migration workflow for **Copilot and Claude
 Code**, with native specialist agents, a durable Python engine, optional MCP,
