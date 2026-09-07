@@ -1,0 +1,14 @@
+{
+  "steps": [
+    {"action": "goto", "path": "/"},
+    {"action": "fill", "selector": "#invoice-id", "value": ""},
+    {"action": "click", "selector": "#load"},
+    {"action": "wait", "selector": "#error:not(:empty)"}
+  ],
+  "observations": {
+    "error": {"kind": "text", "selector": "#error"},
+    "amount": {"kind": "text", "selector": "#amount"},
+    "input": {"kind": "value", "selector": "#invoice-id"},
+    "path": {"kind": "path"}
+  }
+}

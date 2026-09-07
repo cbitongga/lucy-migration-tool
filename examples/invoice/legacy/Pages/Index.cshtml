@@ -1,0 +1,27 @@
+@page
+<!doctype html>
+<html><head><title>Invoice</title></head><body>
+<main>
+  <h1>Invoice</h1>
+  <label for="invoice-id">Invoice ID</label>
+  <input id="invoice-id" value="42" />
+  <button id="load">Load</button>
+  <p id="amount"></p>
+  <p id="error" role="alert"></p>
+</main>
+<script>
+document.querySelector('#load').onclick = async () => {
+  document.querySelector('#amount').textContent = '';
+  document.querySelector('#error').textContent = '';
+  try {
+    const id = document.querySelector('#invoice-id').value;
+    const response = await fetch('/api/invoice?id=' + encodeURIComponent(id));
+    const value = await response.json();
+    if (!response.ok) document.querySelector('#error').textContent = value.error;
+    else document.querySelector('#amount').textContent = value.amount;
+  } catch {
+    document.querySelector('#error').textContent = 'Unavailable';
+  }
+};
+</script>
+</body></html>

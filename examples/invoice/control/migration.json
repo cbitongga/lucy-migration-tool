@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "roots": [
+    {
+      "id": "legacy",
+      "role": "source",
+      "path": "../legacy"
+    },
+    {
+      "id": "java",
+      "role": "target",
+      "path": "../target/backend"
+    },
+    {
+      "id": "react",
+      "role": "target",
+      "path": "../target/frontend"
+    }
+  ],
+  "exclude_dirs": [
+    ".git",
+    "bin",
+    "obj",
+    "node_modules",
+    "dist",
+    "build"
+  ],
+  "max_file_bytes": 2000000,
+  "packet_max_bytes": 60000,
+  "evidence_inputs": [
+    "browser-case.json"
+  ],
+  "http": {
+    "legacy_base_url": "http://127.0.0.1:5100",
+    "target_base_url": "http://127.0.0.1:8100",
+    "environment_id": "local-reference-example",
+    "legacy_build_id": "set-to-actual-legacy-build",
+    "target_build_id": "set-to-actual-target-build"
+  },
+  "commands": {
+    "build-csharp": {
+      "argv": [
+        "dotnet",
+        "build",
+        "-o",
+        "bin/output"
+      ],
+      "cwd_root": "legacy",
+      "purpose": "build",
+      "expected_artifacts": [
+        {
+          "root": "legacy",
+          "path": "bin/output/Legacy.dll"
+        }
+      ]
+    },
+    "build-java": {
+      "argv": [
+        "javac",
+        "-d",
+        "build",
+        "InvoiceServer.java"
+      ],
+      "cwd_root": "java",
+      "purpose": "build",
+      "expected_artifacts": [
+        {
+          "root": "java",
+          "path": "build"
+        }
+      ]
+    },
+    "build-react": {
+      "argv": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd_root": "react",
+      "purpose": "build",
+      "expected_artifacts": [
+        {
+          "root": "react",
+          "path": "dist"
+        }
+      ]
+    },
+    "browser-legacy": {
+      "argv": [
+        "node",
+        "{tool}/adapters/browser_capture.cjs",
+        "--config",
+        "{control}/browser-case.json",
+        "--base",
+        "http://127.0.0.1:5100"
+      ],
+      "cwd_root": "legacy",
+      "purpose": "capture"
+    },
+    "browser-target": {
+      "argv": [
+        "node",
+        "{tool}/adapters/browser_capture.cjs",
+        "--config",
+        "{control}/browser-case.json",
+        "--base",
+        "http://127.0.0.1:4173"
+      ],
+      "cwd_root": "react",
+      "purpose": "capture"
+    }
+  }
+}

@@ -1,0 +1,479 @@
+{
+  "current": true,
+  "edges": [
+    {
+      "confidence": "explicit",
+      "relation": "declares",
+      "source": "Nca7cb35e04aaa2b0292f",
+      "target": "N479cf5547415a024c9e9"
+    },
+    {
+      "confidence": "lexical_candidate",
+      "relation": "exposes_candidate",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N60ed424b5d4e811c7cbe"
+    },
+    {
+      "confidence": "explicit",
+      "relation": "uses_type",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N4285f9372b8b2914cb37"
+    },
+    {
+      "confidence": "explicit",
+      "relation": "uses_type",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "Nafa8ff5fc77d9947d5bd"
+    },
+    {
+      "confidence": "explicit",
+      "relation": "uses_type",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N570b83eff4ac62a363f7"
+    },
+    {
+      "confidence": "explicit",
+      "relation": "uses_type",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N76c2e3521014ecefeb44"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N33c741f8f03754c1b75f"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "Nf9dc8b4ccc6d9a34373b"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "Naa36793259922de8e12d"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "Nf0b4c921a149c18dfb28"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N9f969a371c11906523db"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N9dd6c598bd344fd4a322"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N85cfcf9473c01673fc5e"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N8b3ace8077e6ad9aefe4"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N217e22a2e852abf6b1d9"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "N77e7f81404498fa4c21c"
+    },
+    {
+      "confidence": "unresolved",
+      "relation": "invokes_unresolved",
+      "source": "N66de074ccb2fcdc50d3d",
+      "target": "Nc157a8062a45d71b594c"
+    },
+    {
+      "confidence": "registered",
+      "relation": "implemented_in_legacy",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "N66de074ccb2fcdc50d3d"
+    },
+    {
+      "confidence": "registered",
+      "relation": "implemented_in_legacy",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "Nca7cb35e04aaa2b0292f"
+    },
+    {
+      "confidence": "registered",
+      "relation": "implemented_in_legacy",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "N0d368e5c48ff79e8c5a6"
+    },
+    {
+      "confidence": "registered",
+      "relation": "mapped_to_target",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "Nd1d36b37fd77a4684483"
+    },
+    {
+      "confidence": "registered",
+      "relation": "mapped_to_target",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "N9187ef9e1429aa919c34"
+    },
+    {
+      "confidence": "registered",
+      "relation": "mapped_to_target",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "N8bc2310dd3e4fb926233"
+    },
+    {
+      "confidence": "registered",
+      "relation": "mapped_to_target",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "Nc50fc0a218e9cadbc5b4"
+    },
+    {
+      "confidence": "registered",
+      "relation": "mapped_to_target",
+      "source": "Nb7eb523c9d893031684a",
+      "target": "Nf5d24f8478d39afd0bdb"
+    }
+  ],
+  "exclusions": [],
+  "gaps": [],
+  "limits": [
+    "Syntax/name candidates are not a resolved call graph.",
+    "Overloads, inheritance, generated code, project variants and runtime dependencies require semantic/runtime evidence.",
+    "Registered feature mappings still require human/agent review."
+  ],
+  "nodes": [
+    {
+      "evidence": "source_location",
+      "id": "Nd1d36b37fd77a4684483",
+      "kind": "target_file",
+      "label": "InvoiceServer.java",
+      "ref": {
+        "path": "InvoiceServer.java",
+        "root": "java"
+      },
+      "sha256": "769ddaa0e576e895ee42f2d72661eb4799badc9eac4eb9ca902aa0e95a585297"
+    },
+    {
+      "evidence": "source_location",
+      "id": "N0d368e5c48ff79e8c5a6",
+      "kind": "source_file",
+      "label": "Legacy.csproj",
+      "ref": {
+        "path": "Legacy.csproj",
+        "root": "legacy"
+      },
+      "sha256": "a340204a249d3e794e5bd42bca41aa0d8bb213412e88d095d1a521c983be2ba8"
+    },
+    {
+      "evidence": "source_location",
+      "id": "Nca7cb35e04aaa2b0292f",
+      "kind": "source_file",
+      "label": "Pages/Index.cshtml",
+      "ref": {
+        "path": "Pages/Index.cshtml",
+        "root": "legacy"
+      },
+      "sha256": "4b93fc6beed83f557512f3e7b856bc408891d43cee1f3743ca44e4bcb249d61d"
+    },
+    {
+      "evidence": "source_location",
+      "id": "N479cf5547415a024c9e9",
+      "kind": "ui",
+      "label": "Pages/Index.cshtml",
+      "ref": {
+        "path": "Pages/Index.cshtml",
+        "root": "legacy"
+      }
+    },
+    {
+      "evidence": "source_location",
+      "id": "N66de074ccb2fcdc50d3d",
+      "kind": "source_file",
+      "label": "Program.cs",
+      "ref": {
+        "path": "Program.cs",
+        "root": "legacy"
+      },
+      "sha256": "2ebb88c0da02708db03ce8b8e85e51acd2658e28b72884fb167e95ea7a0023a5"
+    },
+    {
+      "confidence": "lexical_candidate",
+      "evidence": "source_location",
+      "id": "N60ed424b5d4e811c7cbe",
+      "kind": "route_candidate",
+      "label": "MapGet \"/api/invoice\"",
+      "ref": {
+        "end": 8,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 8
+      }
+    },
+    {
+      "evidence": "source_location",
+      "id": "N4285f9372b8b2914cb37",
+      "kind": "type_use",
+      "label": "string",
+      "nullable": true,
+      "ref": {
+        "end": 8,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 8
+      }
+    },
+    {
+      "evidence": "source_location",
+      "id": "Nafa8ff5fc77d9947d5bd",
+      "kind": "type_use",
+      "label": "string",
+      "nullable": false,
+      "ref": {
+        "end": 10,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 10
+      }
+    },
+    {
+      "evidence": "source_location",
+      "id": "N570b83eff4ac62a363f7",
+      "kind": "type_use",
+      "label": "decimal",
+      "nullable": false,
+      "ref": {
+        "end": 14,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 14
+      }
+    },
+    {
+      "evidence": "source_location",
+      "id": "N76c2e3521014ecefeb44",
+      "kind": "type_use",
+      "label": "string",
+      "nullable": false,
+      "ref": {
+        "end": 15,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 15
+      }
+    },
+    {
+      "evidence": "source_location",
+      "id": "Nf5d24f8478d39afd0bdb",
+      "kind": "target_file",
+      "label": "index.html",
+      "ref": {
+        "path": "index.html",
+        "root": "react"
+      },
+      "sha256": "60dfe387ea7e699accca6dad76469ea1649f8dd2a26de83b770947a5a66b35b3"
+    },
+    {
+      "evidence": "source_location",
+      "id": "N8bc2310dd3e4fb926233",
+      "kind": "target_file",
+      "label": "package.json",
+      "ref": {
+        "path": "package.json",
+        "root": "react"
+      },
+      "sha256": "b7dbb285e7f80a7919aa78141be41a909a3a7eee8c3e33f417a26a5c582bfe6e"
+    },
+    {
+      "evidence": "source_location",
+      "id": "N9187ef9e1429aa919c34",
+      "kind": "target_file",
+      "label": "src/main.jsx",
+      "ref": {
+        "path": "src/main.jsx",
+        "root": "react"
+      },
+      "sha256": "3467c362e56a30610cc9e0f8bb97b996e90ca7e74f3ace44bf32484eadef7593"
+    },
+    {
+      "evidence": "source_location",
+      "id": "Nc50fc0a218e9cadbc5b4",
+      "kind": "target_file",
+      "label": "vite.config.js",
+      "ref": {
+        "path": "vite.config.js",
+        "root": "react"
+      },
+      "sha256": "ca9f5f85ba0a3cb4fd4992e130888e77952fc68b039dfaac030bc82c601627b9"
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N33c741f8f03754c1b75f",
+      "kind": "unresolved_call",
+      "label": "CreateBuilder",
+      "ref": {
+        "end": 4,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 4
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "Nf9dc8b4ccc6d9a34373b",
+      "kind": "unresolved_call",
+      "label": "AddRazorPages",
+      "ref": {
+        "end": 5,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 5
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "Naa36793259922de8e12d",
+      "kind": "unresolved_call",
+      "label": "Build",
+      "ref": {
+        "end": 6,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 6
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "Nf0b4c921a149c18dfb28",
+      "kind": "unresolved_call",
+      "label": "MapRazorPages",
+      "ref": {
+        "end": 7,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 7
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N9f969a371c11906523db",
+      "kind": "unresolved_call",
+      "label": "MapGet",
+      "ref": {
+        "end": 8,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 8
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N9dd6c598bd344fd4a322",
+      "kind": "unresolved_call",
+      "label": "IsNullOrEmpty",
+      "ref": {
+        "end": 10,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 10
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N85cfcf9473c01673fc5e",
+      "kind": "unresolved_call",
+      "label": "Text",
+      "ref": {
+        "end": 11,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 11
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N8b3ace8077e6ad9aefe4",
+      "kind": "unresolved_call",
+      "label": "Text",
+      "ref": {
+        "end": 13,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 13
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N217e22a2e852abf6b1d9",
+      "kind": "unresolved_call",
+      "label": "ToString",
+      "ref": {
+        "end": 15,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 15
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "N77e7f81404498fa4c21c",
+      "kind": "unresolved_call",
+      "label": "Text",
+      "ref": {
+        "end": 16,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 16
+      }
+    },
+    {
+      "candidate_count": 0,
+      "evidence": "source_location",
+      "id": "Nc157a8062a45d71b594c",
+      "kind": "unresolved_call",
+      "label": "Run",
+      "ref": {
+        "end": 18,
+        "path": "Program.cs",
+        "root": "legacy",
+        "start": 18
+      }
+    },
+    {
+      "evidence": "registered_contract",
+      "id": "Nb7eb523c9d893031684a",
+      "kind": "feature",
+      "label": "Invoice: Reference invoice screen and API"
+    }
+  ],
+  "schema_version": 1,
+  "semantic_complete": false,
+  "source_fingerprint": "2cfe99b43c341df53017c4a1a6e4e0c415ebf6b82ca1bced4b5aeb643bb058e6"
+}
