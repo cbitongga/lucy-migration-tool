@@ -1,0 +1,104 @@
+Implement an “Ask your data” panel in my existing dashboard.
+
+Context:
+
+* The backend is Java and storage is Cassandra.
+* Existing data includes projects, epics, completed points, developer teams, and API requests.
+* The current dashboard displays table data.
+* Users should ask natural-language questions and receive answers based on authorized backend data.
+* I do not have a paid LLM API key. Use browser-provided, on-device AI where supported.
+
+First inspect the repository:
+
+* Read applicable project instructions.
+* Identify the frontend framework, Java framework, authentication, service/repository structure, Cassandra schemas, partition keys, and existing dashboard queries.
+* Determine what “API requests” represents from the actual code.
+* Reuse existing patterns and dependencies.
+* Briefly explain your implementation approach, then proceed. Ask questions only for genuine blockers; do not stop after producing a plan.
+
+Architecture:
+
+1. The frontend uses a supported browser AI API to translate a question into a structured, allowlisted operation and arguments.
+2. The frontend submits that structured request to the Java backend.
+3. Java validates it, enforces authorization, resolves entities and dates, and invokes existing services to query Cassandra.
+4. Java calculates all metrics and returns structured results with evidence.
+5. The frontend renders an accurate answer using deterministic templates. Optional browser-AI paraphrasing must not be required for the feature to work.
+
+Do not add GraphQL, Apollo, MCP, a vector database, or a cloud LLM dependency for this implementation. Do not automate a ChatGPT website or browser AI sidebar.
+
+Browser AI:
+
+* Verify the current official browser AI documentation before choosing APIs. Do not assume a particular API is stable or available.
+* Encapsulate browser AI behind a small adapter.
+* Feature-detect support and model availability at runtime.
+* Handle unsupported devices, required downloads, download progress where supported, initialization failures, cancellation, and timeouts.
+* Start model downloads only following an explicit user action.
+* If a browser API requires preview enrollment or flags, document this clearly; do not present it as generally available.
+* Provide a usable fallback consisting of supported question templates with explicit team/project/sprint/date selectors. Clearly distinguish this from natural-language interpretation.
+* Do not silently send questions or data to a cloud service.
+
+Supported questions:
+Inspect the schema and implement a small, useful set supported by real data, such as:
+
+* What is the status of this project?
+* Which epics are open for this project?
+* How many points did this team complete in a specified sprint?
+* Who belongs to this team?
+* Show API requests for a specified project and supported filters.
+
+Do not invent fields, relationships, status definitions, or metrics. Unsupported questions must receive a clear explanation of what is available.
+
+Structured request:
+
+* Define a typed contract using an operation enum and operation-specific arguments.
+* Include only necessary dashboard context.
+* Validate model output in the frontend and independently in Java.
+* Reject unknown operations, unexpected fields, invalid argument types, and excessive ranges or limits.
+* Never accept model-generated CQL, SQL, code, table names, or arbitrary URLs for execution.
+* Treat every browser request as untrusted regardless of frontend validation.
+
+Authorization and correctness:
+
+* Derive user identity and tenant scope from existing server authentication.
+* Enforce permissions on every operation and entity lookup.
+* Preserve existing CSRF protection and other security conventions.
+* Resolve team/project names against authorized records. Ask the user to choose if multiple records match.
+* Resolve “last sprint” using the relevant team’s sprint records; do not guess dates.
+* Make metric definitions explicit and consistent with existing business logic.
+* Compute sums, counts, and percentages in Java or existing trusted aggregation logic.
+* Distinguish empty results, ambiguous questions, unsupported questions, access denial, and query failures.
+* Do not infer causes from metrics alone.
+* Render text safely using existing frontend conventions.
+
+Cassandra:
+
+* Reuse existing service and repository methods where possible.
+* Use parameterized queries compatible with actual partition and clustering keys.
+* Avoid arbitrary scans, ALLOW FILTERING as a workaround, and unbounded cross-partition fetching.
+* Bound result sizes, date ranges, execution time, and pagination.
+* If a question needs a new read table or precomputed aggregate, explain why. Do not silently change production schemas or claim that an unimplemented aggregate works.
+* Expose incomplete or paginated results explicitly; never label a partial calculation as a complete total.
+
+UI:
+
+* Add the panel using the existing dashboard style.
+* Include question input, relevant dashboard context, supported example questions, loading/cancel states, answers, and actionable errors.
+* Show applied filters, metric definitions where relevant, and links to supporting records when existing routes allow.
+* Display data freshness only when known. Distinguish retrieval time from source update time.
+* Keep the initial implementation single-turn; do not imply conversational memory.
+
+Verification:
+
+* Test operation validation, unauthorized access, ambiguous entities, correct metric calculations, and empty/error results.
+* Test unsupported browser behavior and invalid model output.
+* Keep model calls mocked in automated tests.
+* Build a small evaluation set of representative questions and expected operations/arguments.
+* Report whether you actually tested a real browser model. Do not equate mocked tests with model accuracy.
+
+Deliver:
+
+* Implement the working feature in this repository.
+* Run the relevant build, lint, and tests.
+* Add concise setup and usage instructions, browser requirements, supported questions, limitations, and how to add another operation.
+* Summarize changed files, verification results, and any remaining blockers.
+* Do not deploy or change production data.
