@@ -1,0 +1,76 @@
+Build a modern control plane called **NEXUS** where I can monitor and operate my independent tools from one central workspace.
+
+**Design direction**
+
+Create a sophisticated control room with a spatial system map and a contextual command deck. The interface should feel distinctive, calm, and operational.
+
+Use:
+- A deep charcoal background with subtle radial lighting.
+- A central workspace core, surrounded by connected tool nodes.
+- Restrained lime accents for the selected tool and primary actions.
+- Amber for issues requiring attention.
+- Crisp typography, generous spacing, thin connectors, and subtle depth.
+- Minimal, purposeful motion that respects reduced-motion preferences.
+
+Avoid generic dashboard layouts, repetitive KPI cards, oversized icons, decorative charts, and excessive neon or science-fiction effects.
+
+**Main experience**
+
+On entry, I should immediately understand:
+1. Which tools need attention.
+2. Which tools are running jobs.
+3. Whether each tool’s data is current.
+4. What action I can take next.
+
+Represent each tool as a selectable node showing its name, a concise status, and its most relevant current activity.
+
+Keep these states separate:
+- Tool availability: online, offline, or unknown.
+- Data freshness: last successful update and whether it is stale.
+- Job state: idle, queued, running, succeeded, or failed.
+
+Never show a tool as healthy merely because it is reachable.
+
+**Contextual command deck**
+
+Selecting a tool updates a persistent command deck beneath the system map without navigating away.
+
+Show:
+- Tool name and a plain-language status explanation.
+- Relevant timestamps and active-job progress when available.
+- One primary action appropriate to the tool.
+- Secondary actions such as inspecting logs, viewing history, or opening the tool.
+
+Support tool-specific actions, including refreshing data, retrying failed refreshes, importing files, and viewing running jobs. Do not give every tool the same actions.
+
+For longer operations, show queued, running, success, and failure states. Prevent duplicate submissions while an action is pending. Keep the interface usable while jobs run.
+
+**Signal stream**
+
+Include a compact chronological stream of meaningful events across tools. Selecting an event should reveal its associated tool or job details. Make errors understandable and provide a useful next action.
+
+**Navigation and scaling**
+
+Keep global navigation compact: Workspace, Jobs & schedules, Activity, and Connections.
+
+Start with a clear map for four tools. Design for additional tools through domain grouping, search, and a compact list view. Keep node positions stable when statuses change.
+
+On mobile, convert the map into a readable stacked layout while preserving selection and contextual actions. Support keyboard navigation, visible focus states, accessible contrast, and text labels alongside status colors.
+
+**Initial tools**
+
+Use these as illustrative examples:
+- Engineering Hub: application health and delivery visibility.
+- LUCY: application migration workbench with running analysis jobs.
+- Opportunity Scout: research tool with a failed data refresh.
+- Finance Dashboard: spending analysis with manual transaction imports.
+
+**Implementation**
+
+Inspect the existing project first and follow its framework and conventions.
+
+Use a shared tool-adapter interface so each tool can expose its identity, status, freshness, supported actions, and jobs without coupling the interface to that tool’s implementation.
+
+If real integrations are unavailable, implement clearly labeled simulated adapters with realistic state transitions. Keep credentials on the server and distinguish simulated data from live data.
+
+Deliver a working interface with tool selection, contextual commands, job feedback, activity updates, and responsive behavior. Make the first screen polished and immediately usable.
