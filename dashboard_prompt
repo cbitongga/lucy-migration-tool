@@ -1,76 +1,103 @@
-Build a modern control plane called **NEXUS** where I can monitor and operate my independent tools from one central workspace.
+Act as a senior workforce-planning business analyst, product designer, and application architect.
 
-**Design direction**
+I am providing an Excel workbook used by a planning director to manage workforce planning across an entire organizational space. It contains project information, planning data, and references to tools she uses.
 
-Create a sophisticated control room with a spatial system map and a contextual command deck. The interface should feel distinctive, calm, and operational.
+Your goal is to understand her work and design a modern, intuitive application that helps her perform it. Preserve the workbook’s business meaning while improving navigation, visibility, and decision-making.
 
-Use:
-- A deep charcoal background with subtle radial lighting.
-- A central workspace core, surrounded by connected tool nodes.
-- Restrained lime accents for the selected tool and primary actions.
-- Amber for issues requiring attention.
-- Crisp typography, generous spacing, thin connectors, and subtle depth.
-- Minimal, purposeful motion that respects reduced-motion preferences.
+Do not jump straight into coding or produce a generic dashboard. Follow these stages.
 
-Avoid generic dashboard layouts, repetitive KPI cards, oversized icons, decorative charts, and excessive neon or science-fiction effects.
+1. Examine the workbook
 
-**Main experience**
+Inspect all accessible worksheets, tables, formulas, named ranges, validation lists, pivot tables, charts, hidden sheets, external references, and macros.
 
-On entry, I should immediately understand:
-1. Which tools need attention.
-2. Which tools are running jobs.
-3. Whether each tool’s data is current.
-4. What action I can take next.
+Identify:
+- What each sheet is used for.
+- Which fields are entered manually, imported, calculated, or reported.
+- The main entities and relationships.
+- Planning units, time periods, statuses, and approval stages.
+- How project demand, workforce availability, allocations, and costs are represented, where present.
+- Which tools are referenced and how they appear to support the workflow.
+- Data-quality issues, conflicting definitions, and missing information.
 
-Represent each tool as a selectable node showing its name, a concise status, and its most relevant current activity.
+Distinguish formulas from cached results. Explicitly state anything you cannot inspect or verify. Do not execute macros or refresh external connections.
 
-Keep these states separate:
-- Tool availability: online, offline, or unknown.
-- Data freshness: last successful update and whether it is stale.
-- Job state: idle, queued, running, succeeded, or failed.
+Support important findings with worksheet names and representative cell ranges or formulas.
 
-Never show a tool as healthy merely because it is reachable.
+2. Reconstruct the director’s workflow
 
-**Contextual command deck**
+Explain in plain language:
+- What she appears to be responsible for.
+- What information she receives and maintains.
+- What decisions she makes.
+- What she reviews regularly.
+- What outputs she prepares and for whom.
+- Where coordination, reconciliation, or manual effort appears necessary.
 
-Selecting a tool updates a persistent command deck beneath the system map without navigating away.
+Separate verified workbook evidence, reasonable inferences, and unanswered questions. Do not assume the layout of the workbook is the ideal application workflow.
 
-Show:
-- Tool name and a plain-language status explanation.
-- Relevant timestamps and active-job progress when available.
-- One primary action appropriate to the tool.
-- Secondary actions such as inspecting logs, viewing history, or opening the tool.
+Identify her five most important tasks. For each, describe the trigger, information needed, actions, and expected outcome.
 
-Support tool-specific actions, including refreshing data, retrying failed refreshes, importing files, and viewing running jobs. Do not give every tool the same actions.
+Ask no more than five high-value questions about gaps that materially affect the design. Continue with clearly labeled assumptions where possible.
 
-For longer operations, show queued, running, success, and failure states. Prevent duplicate submissions while an action is pending. Keep the interface usable while jobs run.
+3. Propose the application experience
 
-**Signal stream**
+Organize the interface around her tasks and decisions rather than one screen per worksheet.
 
-Include a compact chronological stream of meaningful events across tools. Selecting an event should reveal its associated tool or job details. Make errors understandable and provide a useful next action.
+Recommend:
+- A primary workspace.
+- Minimal, clearly named navigation.
+- A useful default landing view.
+- How she moves between portfolio, project, team, and individual details where the data supports them.
+- Search, filters, time navigation, and saved views.
+- How she enters or adjusts planning information.
+- How she detects and resolves planning conflicts.
+- How she prepares a leadership summary.
 
-**Navigation and scaling**
+For each major interface element, explain the task it supports and the workbook evidence behind it.
 
-Keep global navigation compact: Workspace, Jobs & schedules, Activity, and Connections.
+Choose tables, timelines, matrices, charts, and detail panels based on the work they make easier. Dense planning data should remain easy to scan and edit.
 
-Start with a clear map for four tools. Design for additional tools through domain grouping, search, and a compact list view. Keep node positions stable when statuses change.
+4. Give it a distinctive visual identity
 
-On mobile, convert the map into a readable stacked layout while preserving selection and contextual actions. Support keyboard navigation, visible focus states, accessible contrast, and text labels alongside status colors.
+Create an experience that feels like a sophisticated planning studio: modern, polished, calm, and memorable.
 
-**Initial tools**
+Avoid a generic grid of KPI cards. Use strong typography, thoughtful spacing, restrained color, clear hierarchy, and purposeful interactions.
 
-Use these as illustrative examples:
-- Engineering Hub: application health and delivery visibility.
-- LUCY: application migration workbench with running analysis jobs.
-- Opportunity Scout: research tool with a failed data refresh.
-- Finance Dashboard: spending analysis with manual transaction imports.
+A timeline-based workforce canvas, contextual detail drawer, capacity lens, or scenario comparison may be appropriate—but use them only if the workbook and workflow justify them.
 
-**Implementation**
+Use color consistently, pair it with text or symbols, and support keyboard navigation, readable contrast, and precise numeric entry.
 
-Inspect the existing project first and follow its framework and conventions.
+Explain the visual concept and show a concrete layout before implementation.
 
-Use a shared tool-adapter interface so each tool can expose its identity, status, freshness, supported actions, and jobs without coupling the interface to that tool’s implementation.
+5. Preserve planning accuracy and trust
 
-If real integrations are unavailable, implement clearly labeled simulated adapters with realistic state transitions. Keep credentials on the server and distinguish simulated data from live data.
+Where relevant:
+- Keep requested, approved, and allocated workforce distinct.
+- Keep headcount, FTE, hours, and cost distinct, with explicit units.
+- Define the capacity baseline before showing utilization or over-allocation.
+- Distinguish unfilled positions from assigned people.
+- Show data source, import time, and validation issues.
+- Keep exploratory scenarios separate from the official plan.
+- Make calculated totals traceable to their records and rules.
+- Provide clear save, cancel, and undo behavior.
+- Preserve the source workbook.
 
-Deliver a working interface with tool selection, contextual commands, job feedback, activity updates, and responsive behavior. Make the first screen polished and immediately usable.
+Do not invent delivery forecasts, financial savings, integrations, or AI recommendations that the available data cannot support.
+
+6. Define and demonstrate the first version
+
+Recommend the smallest useful version that completes one important planning workflow from beginning to end.
+
+Provide:
+- A concise understanding of the director’s work.
+- A workbook-to-workflow map.
+- The proposed navigation and screen layout.
+- One detailed user journey using representative workbook records.
+- A prioritized first-version scope.
+- The main assumptions and unresolved questions.
+
+Then create an interactive prototype if your environment supports it. Use anonymized representative data and clearly distinguish working functionality from simulated behavior. Do not expose employee information through external services.
+
+Validate the prototype against the chosen workflow and reconcile representative calculations with the workbook.
+
+Success means the director can understand the current plan, locate a problem, inspect its cause, make a precise adjustment, and review its consequences with minimal navigation.
